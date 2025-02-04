@@ -1,3 +1,3 @@
-public class TicketExportFormat {
-    
+enum TicketExportFormat {
+    PLAINTEXT, JSON    
 }
