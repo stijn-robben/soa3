@@ -1,5 +1,33 @@
-class Main {
+import java.time.LocalDateTime;
+
+public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World!"); // Display the string.
+        System.out.println("Running test...");
+
+        System.out.println("Creating movie...");
+        Movie movie = new Movie("Inception");
+        
+        LocalDateTime screeningTime = LocalDateTime.of(2025, 2, 10, 19, 30);
+        MovieScreening screening = new MovieScreening(movie, screeningTime, 12.50);
+        movie.addScreening(screening);
+        Order order = new Order(1, false);
+        
+        MovieTicket ticket1 = new MovieTicket(screening, false, 5, 8);
+        MovieTicket ticket2 = new MovieTicket(screening, true, 5, 9);
+        
+        order.addSeatReservation(ticket1);
+        order.addSeatReservation(ticket2);
+        
+        System.out.println("Calculating total price...");
+        double totalPrice = order.calculatePrice();
+        System.out.println("Total order price: " + totalPrice);
+        
+        
+        System.out.println("Exporting order in plaintext format...");
+        order.export(TicketExportFormat.PLAINTEXT);
+        System.out.println("Exporting order in JSON format...");
+        order.export(TicketExportFormat.JSON);
+        
+        System.out.println("Test completed.");
     }
 }

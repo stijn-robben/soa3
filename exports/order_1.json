@@ -1,0 +1,9 @@
+{
+  "orderNr": 1,
+  "isStudentOrder": false,
+  "totalPrice": 25.0,
+  "tickets": [
+    { "row": 5, "seat": 8, "isPremium": false },
+    { "row": 5, "seat": 9, "isPremium": true }
+  ]
+}

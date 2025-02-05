@@ -1,0 +1,6 @@
+Order Number: 1
+Student Order: No
+Total Price: 25.0
+Tickets:
+  - Movie: Inception, Date and time: 2025-02-10T19:30, price per seat: 12.5, seat: 58
+  - Movie: Inception, Date and time: 2025-02-10T19:30, price per seat: 12.5, seat: 59
