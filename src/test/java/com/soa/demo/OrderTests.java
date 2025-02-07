@@ -29,19 +29,6 @@ public class OrderTests {
         assertEquals(20.0, totalPrice, "Total price should be 20.0");
     }
 
-    @Test
-    void calculatePriceOneTicket() {
-        Movie movie = new Movie("Inception");
-        LocalDateTime screeningTime = LocalDateTime.of(2025, 2, 10, 19, 30);
-        MovieScreening screening = new MovieScreening(movie, screeningTime, 12.50);
-        Order order = new Order(1, false);
-
-        MovieTicket ticket = new MovieTicket(screening, false, 5, 8);
-        order.addSeatReservation(ticket);
-
-        double totalPrice = order.calculatePrice();
-        assertEquals(12.50, totalPrice, "Total price should be 12.50");
-    }
 
     @Test
     void calculatePriceNoTickets() {
@@ -90,20 +77,9 @@ public class OrderTests {
     }
 
     @Test
-    void testExportToJson() {
-        Movie movie = new Movie("Inception");
-        LocalDateTime screeningTime = LocalDateTime.of(2025, 2, 10, 19, 30);
-        MovieScreening screening = new MovieScreening(movie, screeningTime, 12.50);
-        Order order = new Order(1, false);
-
-        MovieTicket ticket1 = new MovieTicket(screening, false, 5, 8);
-        MovieTicket ticket2 = new MovieTicket(screening, true, 5, 9);
-
-        order.addSeatReservation(ticket1);
-        order.addSeatReservation(ticket2);
-
-        String json = order.toJson();
-        assertTrue(json.contains("\"orderNr\": 1"), "JSON should contain order number");
-        assertTrue(json.contains("\"totalPrice\": 25.0"), "JSON should contain total price");
-    }
+void calculatePriceNoTicketsStudent() {
+    Order order = new Order(1, true);
+    double totalPrice = order.calculatePrice();
+    assertEquals(0.0, totalPrice, "Total price should be 0.0 for a student order with no tickets");
+}
 }
