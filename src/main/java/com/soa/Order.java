@@ -30,7 +30,7 @@ public class Order {
             totalPrice += ticket.getPrice();
         }
         if (isStudentOrder) {
-            totalPrice *= 1; // Verander 1 naar bv. 0.8 om 20% korting te krijgen voor studenten.
+            totalPrice *= 0.8; // Verander 1 naar bv. 0.8 om 20% korting te krijgen voor studenten.
         }
         return totalPrice;
     }
