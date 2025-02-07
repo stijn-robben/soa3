@@ -1,3 +1,5 @@
+package com.soa;
+
 public class MovieTicket {
     int rowNr;
     int seatNr;

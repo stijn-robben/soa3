@@ -1,3 +1,5 @@
+package com.soa;
+
 public class Movie {
     private String title;
     private MovieScreening[] screenings;
