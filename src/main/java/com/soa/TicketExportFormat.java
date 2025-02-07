@@ -1,5 +1,5 @@
 package com.soa;
 
-enum TicketExportFormat {
+public enum TicketExportFormat {
     PLAINTEXT, JSON    
 }
