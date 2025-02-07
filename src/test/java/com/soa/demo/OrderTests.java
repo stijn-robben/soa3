@@ -54,4 +54,9 @@ public class OrderTests {
         assertTrue(json.contains("\"orderNr\": 1"), "JSON should contain order number");
         assertTrue(json.contains("\"totalPrice\": 25.0"), "JSON should contain total price");
     }
+
+    @Test
+    void testAlwatsFalse() {
+        assertTrue(false, "This test will always fail");
+    }
 }
