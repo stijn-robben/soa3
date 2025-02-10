@@ -46,4 +46,4 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONARCLOUDKEY }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=stijnrobben
-        working-directory: ../
+        working-directory: ../soa3
