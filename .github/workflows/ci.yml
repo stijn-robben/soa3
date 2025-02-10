@@ -41,5 +41,5 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONARCLOUDKEY }} # Store your SonarCloud token in GitHub Secrets
         run: mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
             -Dsonar.projectKey=stijn-robben_soa3 \
-            -Dsonar.organization=Stijn Robben \
-            -Dsonar.host.url=https://sonarcloud.io
+            -Dsonar.organization=stijnrobben \
+            -Dsonar.host.url=https://sonarcloud.io \
