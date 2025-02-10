@@ -4,9 +4,6 @@ import java.time.LocalDateTime;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Running test...");
-
-        System.out.println("Creating movie...");
         Movie movie = new Movie("Inception");
         
         LocalDateTime screeningTime = LocalDateTime.of(2025, 2, 10, 19, 30);
@@ -20,16 +17,9 @@ public class Main {
         order.addSeatReservation(ticket1);
         order.addSeatReservation(ticket2);
         
-        System.out.println("Calculating total price...");
         double totalPrice = order.calculatePrice();
-        System.out.println("Total order price: " + totalPrice);
         
-        
-        System.out.println("Exporting order in plaintext format...");
         order.export(TicketExportFormat.PLAINTEXT);
-        System.out.println("Exporting order in JSON format...");
         order.export(TicketExportFormat.JSON);
-        
-        System.out.println("Test completed.");
     }
 }
