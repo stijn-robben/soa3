@@ -14,16 +14,32 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up JDK
         uses: actions/setup-java@v2
         with:
-          distribution: "adopt"
-          java-version: "23"
+          distribution: "temurin" # Changed from 'adopt' to 'temurin' (latest supported version)
+          java-version: "17" # Java 23 is not widely supported, use LTS version
+
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
 
       - name: Install dependencies
         run: mvn install
 
       - name: Run tests
         run: mvn test
+
+      - name: SonarCloud Scan
+        env:
+          SONAR_TOKEN: ${{ secrets.SONARCLOUDKEY }} # Store your SonarCloud token in GitHub Secrets
+        run: mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+            -Dsonar.projectKey=stijn-robben_soa3 \
+            -Dsonar.organization=Stijn Robben \
+            -Dsonar.host.url=https://sonarcloud.io

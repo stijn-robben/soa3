@@ -6,7 +6,6 @@ import com.soa.MovieScreening;
 import com.soa.MovieTicket;
 import com.soa.Order;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDateTime;
 
