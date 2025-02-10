@@ -44,6 +44,6 @@ jobs:
           restore-keys: ${{ runner.os }}-sonar
       - name: Analyze
         env:
-          SONAR_TOKEN: ${{ secrets.SONARCLOUDKEY }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=stijnrobben
+          SONAR_TOKEN: ${{ secrets.SONARTOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=stijnrobben_soa3
         working-directory: ../soa3
