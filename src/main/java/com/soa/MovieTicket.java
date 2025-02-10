@@ -1,12 +1,12 @@
 package com.soa;
 
-public class MovieTicket {
+public class MovieTicket implements IMovieTicket{
     int rowNr;
     int seatNr;
     boolean isPremium;
-    MovieScreening movieScreening;
+    IMovieScreening movieScreening;
 
-    public MovieTicket(MovieScreening movieScreening, boolean isPremiumReservation, int seatRow, int seatNr) {
+    public MovieTicket(IMovieScreening movieScreening, boolean isPremiumReservation, int seatRow, int seatNr) {
         this.rowNr = seatRow;
         this.seatNr = seatNr;
         this.isPremium = isPremiumReservation;

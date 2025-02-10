@@ -2,12 +2,12 @@ package com.soa;
 
 import java.time.LocalDateTime;
 
-public class MovieScreening {
+public class MovieScreening implements IMovieScreening {
     private LocalDateTime dateAndTime;
     private double pricePerSeat;
-    private Movie movie;
+    private IMovie movie;
 
-    public MovieScreening(Movie movie, LocalDateTime dateAndTime, double pricePerSeat) {
+    public MovieScreening(IMovie movie, LocalDateTime dateAndTime, double pricePerSeat) {
         this.dateAndTime = dateAndTime;
         this.pricePerSeat = pricePerSeat;
         this.movie = movie;
